@@ -1,0 +1,42 @@
+{
+  "name": "pi-squared",
+  "version": "1.0.0",
+  "description": "Run Pi Coding Agent inside a Docker/Podman container sandbox",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "bin": {
+    "pi2": "src/index.ts"
+  },
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "node src/index.ts",
+    "test": "node --test \"src/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "oxfmt": "^0.73.0",
+    "oxlint": "^1.88.0",
+    "typescript": "^7.0.2"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.14.0",
+      "onFail": "download"
+    }
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "packageManager": "pnpm@12.14.0"
+}
